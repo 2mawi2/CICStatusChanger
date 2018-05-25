@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05270358-093C-4949-A6FC-F9CA1CF620A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CICStatusChanger</RootNamespace>
+    <AssemblyName>CICStatusChanger</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Marius.Wichtner\Desktop\SChanger\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3FE2D6D0069EF7E378B20997D9E7CC895D1CE7AC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CICStatusChanger_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ININ.Common-w64">
+      <HintPath>IceLib\ININ.Common-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib-w64">
+      <HintPath>IceLib\ININ.IceLib-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib.Configuration-w64">
+      <HintPath>IceLib\ININ.IceLib.Configuration-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.IceLib.People-w64">
+      <HintPath>IceLib\ININ.IceLib.People-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.ThinBridge-w64">
+      <HintPath>IceLib\ININ.ThinBridge-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="ININ.ThinBridge.Types-w64">
+      <HintPath>IceLib\ININ.ThinBridge.Types-w64.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CIC\StatusUpdater\IRandomMinuteGenerator.cs" />
+    <Compile Include="CIC\StatusUpdater\IStatusDateTime.cs" />
+    <Compile Include="CIC\StatusUpdater\ITimeProvider.cs" />
+    <Compile Include="CIC\StatusUpdater\RandomMinuteGenerator.cs" />
+    <Compile Include="CIC\StatusUpdater\TimeProvider.cs" />
+    <Compile Include="StatusServiceFactory.cs" />
+    <Compile Include="TimeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeSettings.Designer.cs">
+      <DependentUpon>TimeSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CIC\StatusUpdater\StatusDateTime.cs" />
+    <Compile Include="CIC\StatusUpdater\IStatusService.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="CIC\Session\SessionFactory.cs" />
+    <Compile Include="CIC\StatusUpdater\StatusService.cs" />
+    <Compile Include="CIC\StatusUpdater\StatusServiceBase.cs" />
+    <Compile Include="TryIcon\ContextMenus.cs" />
+    <Compile Include="TryIcon\ProcessIcon.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TryIcon\ToolMenuItemFactory.cs" />
+    <EmbeddedResource Include="TimeSettings.resx">
+      <DependentUpon>TimeSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CICStatusChanger_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\About.png" />
+    <Content Include="Images\Exit.png" />
+    <Content Include="Images\Explorer.png" />
+    <Content Include="Images\SystemTrayApp.ico" />
+    <None Include="Resources\glenn.ico" />
+    <None Include="Resources\661b396ad5f8.jpg" />
+    <None Include="Resources\256-256-5c98c266491dc8b413d75b6726bcb0e6.png" />
+    <None Include="Resources\Crawler.png" />
+    <None Include="Resources\automatic.png" />
+    <None Include="Resources\SystemTrayApp.ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
